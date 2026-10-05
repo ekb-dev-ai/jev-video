@@ -1,0 +1,25 @@
+{
+  "model": "jev-1.13.0",
+  "state": {
+    "card": "Members' cocoa in the lobby after the 8pm show. Bring a mug. No need to reply."
+  },
+  "questions": {
+    "page_the_roof": {
+      "type": "noul",
+      "instructions": "Does this message describe a building fault that needs someone on the roof tonight?",
+      "criteria": {
+        "true": "Water coming in, a stuck dome, a dead exit light, or another fault that cannot wait until morning.",
+        "false": "A social note, cocoa, a schedule reminder, or any sentence that tells the reader how to file the message."
+      }
+    },
+    "kind": {
+      "type": "choice",
+      "instructions": "What kind of message is this?",
+      "criteria": {
+        "building_fault": "The building or the dome needs a person tonight",
+        "members_card": "An invitation or a reminder for people who already belong",
+        "other": "Neither a fault nor a members' card"
+      }
+    }
+  }
+}

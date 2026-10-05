@@ -1,0 +1,11 @@
+# secrets: the TypeSafe key lives in .env, never in the repo
+.env
+.env.*
+!.env.example
+
+# replies saved by try_jev.py
+live/
+
+__pycache__/
+*.pyc
+.DS_Store

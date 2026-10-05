@@ -1,0 +1,26 @@
+{
+  "model": "jev-1.13.0",
+  "state": {
+    "card": "Mirror recoated in March. The focuser sticks once the air is below freezing. At the last school hour a teacher ran it from the paper card for the whole session. Nobody has taken it out on a cold night since."
+  },
+  "questions": {
+    "lend_unsupervised": {
+      "type": "noul",
+      "instructions": "Is this telescope ready to go out with a borrower and no staff beside them?",
+      "criteria": {
+        "true": "A careful adult could take it tonight with only the paper card.",
+        "false": "Something in the note says a staff member should be there, or the instrument is not ready."
+      }
+    },
+    "readiness": {
+      "type": "score",
+      "instructions": "How ready is this instrument for a public night?",
+      "criteria": [
+        "Shelf piece. Do not hand it to anyone.",
+        "Staff only. It works if someone who knows the stick is standing there.",
+        "A careful adult can run a short session from the paper card.",
+        "Ready for a full show, including a cold night."
+      ]
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "model": "jev-1.13.0",
+  "state": {
+    "desk_pad": "I left a blue backpack in the dome after the 3 o'clock show. Please check if it's there and call me today."
+  },
+  "questions": {
+    "find_the_item": {
+      "type": "noul",
+      "instructions": "Does this note ask the staff to look for something a visitor left behind?",
+      "criteria": {
+        "true": "The writer lost an item at the building and wants staff to look for it.",
+        "false": "The writer is not asking staff to look for a lost item."
+      }
+    },
+    "desk": {
+      "type": "choice",
+      "instructions": "Which desk should pick this up first?",
+      "criteria": {
+        "lost_and_found": "Items visitors left behind and want back",
+        "tickets": "Ticket sales, refunds, and show times",
+        "schools": "A class visit, a teacher, or what children were told"
+      }
+    },
+    "how_soon": {
+      "type": "score",
+      "instructions": "How soon does the writer need an answer?",
+      "criteria": [
+        "Whenever someone has a free minute.",
+        "Sometime today.",
+        "Right now. The writer is standing at the door."
+      ]
+    }
+  }
+}

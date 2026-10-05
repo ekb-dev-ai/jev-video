@@ -1,0 +1,37 @@
+{
+  "model": "jev-1.13.0",
+  "state": {
+    "test": "tests/test_vae_grid.py::test_detail_held",
+    "log": "FAILED test_detail_held\nGrid energy fell from 194.8 to 41.2.\nDetail PSNR fell from 28.83 dB to 19.10 dB.\nThe corrector blurred the frame. Lattice bins dropped because the picture lost sharpness, not because the lattice was removed.\nAssertionError: a blur that lowers Grid and also lowers Detail is a rejection.",
+    "rule": "A fix counts only when Grid falls and Detail does not fall."
+  },
+  "questions": {
+    "failure_kind": {
+      "type": "choice",
+      "instructions": "What kind of failure does this log describe?",
+      "criteria": {
+        "flake": "A timeout, connection reset, or a failure that would likely pass on retry, with no product assertion.",
+        "regression": "The change made a measured quality worse. The test names the metric that fell.",
+        "environment": "A missing dependency, wrong machine, or setup error before the assertion.",
+        "bad_test": "The test expectation itself looks inconsistent with the rule in the log."
+      }
+    },
+    "severity": {
+      "type": "score",
+      "instructions": "How severe is this failure for someone deciding whether to keep the change?",
+      "criteria": [
+        "Cosmetic. Numbers moved inside noise, no behavior change described.",
+        "Real but local. One quality metric missed, workaround or revert is obvious.",
+        "Blocking. The change hides a defect or would ship a worse picture."
+      ]
+    },
+    "detail_fell": {
+      "type": "noul",
+      "instructions": "Does the log say that Detail, the PSNR, went down?",
+      "criteria": {
+        "true": "The log states a lower Detail or PSNR than the baseline.",
+        "false": "The log does not say Detail or PSNR decreased."
+      }
+    }
+  }
+}
